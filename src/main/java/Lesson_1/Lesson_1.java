@@ -14,21 +14,36 @@ package Lesson_1;
  *  препятствий не идет.*/
 public class Lesson_1 {
     public static void main(String[] args) {
-        Cat c1 = new Cat("Barsic", 60, 200);
-        Robot r1 = new Robot("T800", 300, 50000);
-        Human h1 = new Human("Petr", 150, 5000);
-        Wall w1 = new Wall(120);
-        Treadmill t1 = new Treadmill(6000);
-        Actions a1;
-        a1 = c1;
-        System.out.println(a1.jump(w1));
-        System.out.println(a1.run(t1));
-        a1 = r1;
-        System.out.println(a1.jump(w1));
-        System.out.println(a1.run(t1));
-        a1 = h1;
-        System.out.println(a1.jump(w1));
-        System.out.println(a1.run(t1));
+        Object[] member = new Object[]{
+                new Robot("T800", 500, 50000),
+                new Human("Sara", 150, 10000),
+                new Robot("T1000", 600, 70000),
+                new Human("Konor", 140, 8000),
+                new Cat("Barsic", 100, 1000)
+        };
+        Object[] barrier = new Object[]{
+                new Treadmill(1000),
+                new Treadmill(8000),
+                new Wall(100),
+                new Wall(145),
+                new Treadmill(15000)
+        };
+        Actions act;
+        for (Object x : member) {
+            for (Object b : barrier) {
+                if (b instanceof Treadmill) {
+                    if (!((Actions) x).run((Treadmill) b)) {
+                        break;
+                    }
+                } else if (b instanceof Wall) {
+                    if (!((Actions) x).jump((Wall) b)) {
+                        break;
+                    }
+                }
+            }
+            System.out.println("");
+        }
+
 
     }
 }

@@ -13,12 +13,20 @@ public class Robot implements Actions {
 
 
     public boolean run(Treadmill t) {
-        System.out.printf("Робот %s пробежал %d метров!\n", model, distance);
-        return t.getWay() < distance;
+        if (t.getWay() <= distance){
+            System.out.printf("Робот %s Успешно пробежал дистанцию %d метров!\n", model, (int)t.getWay());
+            return true;
+        }
+        System.out.printf("Робот %s не пробежал дистанцию %d метров!\n", model, (int)t.getWay());
+        return false;
     }
 
     public boolean jump(Wall w) {
-        System.out.printf("Робот %s прыгнул в высоту %d сантиметров!\n", model, jamp_height);
-        return w.getHeight() < jamp_height;
+        if(w.getHeight() <= jamp_height){
+            System.out.printf("Робот %s успешно прыгнул в высоту %d сантиметров!\n", model, (int)w.getHeight());
+            return true;
+        }
+        System.out.printf("Робот %s не смог прыгнуть в высоту %d сантиметров!\n", model, (int)w.getHeight());
+        return false;
     }
 }
