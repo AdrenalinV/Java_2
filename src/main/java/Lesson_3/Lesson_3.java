@@ -1,7 +1,5 @@
 package Lesson_3;
 
-
-import java.lang.ref.PhantomReference;
 import java.util.TreeMap;
 
 public class Lesson_3 {
