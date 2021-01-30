@@ -19,13 +19,13 @@ public class Lesson_5 {
 
     }
 
-    public static void lineCalculate(float arr[]) {
+    public static void lineCalculate(float[] arr) {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = (float) (arr[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
         }
     }
 
-    public static void multiCalculate(float arr[], int path) {
+    public static void multiCalculate(float[] arr, int path) {
         int half = arr.length / path;
         Thread[] t = new Thread[path];
         float[][] a = new float[path][half];
