@@ -7,7 +7,7 @@ public class TestLesson2 {
     @Test(expected = MyArraySizeException.class)
     public void testMyArraySizeExeption() {
         int res = Lesson_2.demoException(new String[][]{});
-        Assert.assertEquals(136, res);
+
     }
 
     @Test(expected = MyArrayDataException.class)
@@ -16,7 +16,6 @@ public class TestLesson2 {
                 {"5", "6", "7", "8"},
                 {"9", "10", "11", "12"},
                 {"13", "14", "и", "16"}});
-        Assert.assertEquals(-1, res);
     }
 
     @Test
