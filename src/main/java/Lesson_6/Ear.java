@@ -4,7 +4,7 @@ import java.io.DataInputStream;
 import java.io.IOException;
 
 public class Ear implements Runnable {
-    private DataInputStream in;
+    private final DataInputStream in;
 
     public Ear(DataInputStream in) {
         this.in = in;
